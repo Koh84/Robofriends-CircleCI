@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
+      - image: cimg/node:16.16.0 # the primary container, where your job's commands are run
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
@@ -13,7 +13,7 @@ jobs:
       - run: CI=true npm run build #give external environment
   test:
     docker:
-      - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
+      - image: cimg/node:16.16.0 # the primary container, where your job's commands are run
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
@@ -24,7 +24,7 @@ jobs:
       - run: npm test 
   hithere:
     docker:
-      - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
+      - image: cimg/node:16.16.0 # the primary container, where your job's commands are run
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
